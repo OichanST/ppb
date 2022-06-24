@@ -5,7 +5,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        Ver 1.10
+        Ver 1.10_02
     </body>
 </html>
 <script type="text/javascript">
@@ -17,9 +17,9 @@
     window.onload = function(){
         console.log("onload Start");
         $.ajax({
-            type:"POST",
+            type:"GET",
             url:"https://login.salesforce.com/services/oauth2/authorize",
-            crossDomain:true,
+            //crossDomain:true,
             cache:false,
             dataType:"text",
             data:params,
