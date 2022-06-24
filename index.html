@@ -5,25 +5,23 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        Ver 1.09
+        Ver 1.10
     </body>
 </html>
 <script type="text/javascript">
+    //client_secret:"F864BDD8ADFB8B17EA27F0623CF9039A503A76F9312032654DBFFDB25E87B142",
     // onload function
-    const params = {
-        response_type:"token",
-        client_id:"3MVG9pRzvMkjMb6nsLsmTx_FqB0rQ9AHEMYt85TrwFp6b3yeP.ta18VQpmha_Ds31fssFdYib4DdLPcLKqtQG",
-        //client_secret:"F864BDD8ADFB8B17EA27F0623CF9039A503A76F9312032654DBFFDB25E87B142",
-        redirect_uri:"https://protocomdev-dev-ed.my.salesforce.com/services/apexrest/PPB_Inquiry__c"
-    }
+    let params = "response_type=token";
+    params += "&client_id=3MVG9pRzvMkjMb6nsLsmTx_FqB0rQ9AHEMYt85TrwFp6b3yeP.ta18VQpmha_Ds31fssFdYib4DdLPcLKqtQG";
+    params += "&redirect_uri=https://protocomdev-dev-ed.my.salesforce.com/services/apexrest/PPB_Inquiry__c";
     window.onload = function(){
         console.log("onload Start");
         $.ajax({
             type:"POST",
-            crossDomain:true,
             url:"https://login.salesforce.com/services/oauth2/authorize",
+            crossDomain:true,
             cache:false,
-            dataType:"jsonp",
+            dataType:"text",
             data:params,
             success : function (connectData) {
                 console.log("success");
