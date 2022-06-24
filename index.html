@@ -5,7 +5,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        Ver 1.05
+        Ver 1.06
     </body>
 </html>
 <script type="text/javascript">
@@ -28,8 +28,9 @@
             success : function (connectData) {
                 console.log("success");
             },
-            error : function (data, errorThrown,status) {
-                console.log("failure");
+            error : function (data, errorThrown, status) {
+                console.log(data);
+                console.log(errorThrown);
             }
         });
     }
