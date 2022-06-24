@@ -5,7 +5,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        Ver 1.06
+        Ver 1.07
     </body>
 </html>
 <script type="text/javascript">
@@ -30,6 +30,12 @@
             },
             error : function (data, errorThrown, status) {
                 console.log(data);
+                var res = {}
+                try {
+                    res = $.parseJSON(data.responseText);
+                } catch (e) {
+                }
+                console.log(res);
                 console.log(errorThrown);
             }
         });
