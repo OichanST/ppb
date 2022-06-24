@@ -8,10 +8,9 @@
     </body>
 </html>
 <script type="text/javascript">
-    // 初期表示処理
+    // 蛻晄悄陦ｨ遉ｺ蜃ｦ逅�
     window.onload = function(){
-        console.log('最初');
-        // アクセストークン取得（リフレッシュトークンフロー） Ajax
+        console.log('onload Start');
         $.ajax({
             type: 'POST',
             crossOrigin: true,
@@ -26,10 +25,10 @@
             	"state":{}
             },
             success : function (connectData) {
-                console.log('成功');
+                console.log('success');
             },
             error : function (data, errorThrown,status) {
-                console.log('失敗1');
+                console.log('failure');
             }
         });
     }
