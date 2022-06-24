@@ -11,6 +11,7 @@
     // 初期表示処理
     window.onload = function(){
         console.log('onload Start');
+        /*
         $.ajax({
             type: 'GET',
             crossOrigin: true,
@@ -30,6 +31,14 @@
             error : function (data, errorThrown,status) {
                 console.log('failure');
             }
+        });
+        */
+        let params = "response_type=token";
+        params += "&client_id=3MVG9pRzvMkjMb6nsLsmTx_FqB0rQ9AHEMYt85TrwFp6b3yeP.ta18VQpmha_Ds31fssFdYib4DdLPcLKqtQG";
+        params += "&client_secret=F864BDD8ADFB8B17EA27F0623CF9039A503A76F9312032654DBFFDB25E87B142";
+        params += "&redirect_uri=https://protocomdev-dev-ed.my.salesforce.com/services/apexrest/PPB_Inquiry__c";
+        $.post('https://protocomdev-dev-ed.my.salesforce.com/services/oauth2/token', params).done(function(data){
+            console.log("access success");
         });
     }
 </script>
